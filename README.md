@@ -36,7 +36,6 @@ The automated data cleaning script supports complete auditing and structural pro
 ˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
 
 <div align="center">
-  ˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
-  <p><i>made with 🩷 by Maria Eduarda Gonçalves</i></p>
-  ˚₊‧꒰ა 🌙 ໒꒱ ─── Ɛ 📖 ɜ ─── ꒰ა 🌙 ໒꒱‧₊
+   ˚₊‧꒰ა 🌙 ໒꒱ ─── Ɛ 📖 ɜ ─── ꒰ა 🌙 ໒꒱‧₊
+  <p><i>made with 🩷 by **Maria Eduarda Gonçalves**</i></p>
 </div>
