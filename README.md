@@ -33,30 +33,6 @@ The automated data cleaning script supports complete auditing and structural pro
 
 ˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
 
-### <p align="center">˚₊‧꒰ა 💻 Core Script ໒꒱‧₊˚</p>
-
-```python
-# Import Pandas library
-import pandas as pd
-
-# Load CSV dataset
-dados = pd.read_csv("vendas.csv")
-
-# Create a working copy to preserve raw data
-dados_tratados = dados.copy()
-
-# Remove fully duplicated rows
-dados_tratados = dados_tratados.drop_duplicates()
-
-# Create a status classification column
-dados_tratados["status"] = "VALIDO"
-
-# Classify records with missing info or logic anomalies
-dados_tratados.loc[dados_tratados["produto"].isnull(), "status"] = "PENDENTE"
-dados_tratados.loc[dados_tratados["quantidade"] <= 0, "status"] = "SUSPEITO"
-
-# Filter valid records and export to a new clean CSV
-dados_validos = dados_tratados[dados_tratados["status"] == "VALIDO"]
-dados_validos.to_csv("vendas_validas.csv", index=False)
-
-print("✨ Pipeline executed successfully! Clean dataset generated. 🌸")
+<div align="center">
+  <p><i>developed with 💗 and ☕ by <b>Maria Eduarda Gonçalves</b></i></p>
+</div>
