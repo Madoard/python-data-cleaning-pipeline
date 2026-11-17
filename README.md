@@ -9,10 +9,10 @@
   <p><i>✦·˚*·.* Command-line and automated Python data cleaning pipeline built with Pandas to audit, validate, and structure sales records *·.-°*·.✦</i></p>
 
   <p>
-    <img src="https://img.shields.io/badge/PYTHON-3.X-FFB7C5?style=flat-square&logo=python&logoColor=white" alt="Python" />
-    <img src="https://img.shields.io/badge/PANDAS-ETL-E6E6FA?style=flat-square&logo=pandas&logoColor=555555" alt="Pandas" />
-    <img src="https://img.shields.io/badge/DATA-QUALITY-FFD1DC?style=flat-square&logo=databricks&logoColor=white" alt="Data Quality" />
-    <img src="https://img.shields.io/badge/IN_MEMORY-PIPELINE-E6E6FA?style=flat-square&logoColor=555555" alt="Pipeline" />
+    <img src="https://img.shields.io/badge/Python-FFB7C5?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/Pandas-E6E6FA?style=for-the-badge&logo=pandas&logoColor=555555" alt="Pandas" />
+    <img src="https://img.shields.io/badge/Data%20Engineering-FFD1DC?style=for-the-badge&logo=databricks&logoColor=white" alt="Data Engineering" />
+    <img src="https://img.shields.io/badge/ETL-Pipeline-E6E6FA?style=for-the-badge&logoColor=555555" alt="ETL" />
   </p>
 
 </div>
