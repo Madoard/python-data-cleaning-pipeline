@@ -1,58 +1,37 @@
-# python-data-cleaning-pipeline
+˚₊‧꒰ა 🌙 ໒꒱ ─── Ɛ 📖 ɜ ─── ꒰ა 🌙 ໒꒱‧₊
+
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FFD1DC,50:FFB7C5,100:E6E6FA&height=180&section=header&text=Data%20Cleaning%20Pipeline&fontSize=34&fontColor=ffffff&fontAlignY=38&desc=%E2%9C%A7%EF%BD%A5%EF%BE%9F:%20*Python%20•%20Pandas%20•%20ETL*%20:%EF%BD%A5%EF%BE%9F%E2%9C%A7&descSize=14&descAlignY=58&animation=twinkling" width="100%" alt="Header Banner" />
+  # °₊·εʋ 📓 Python Data Cleaning Pipeline 📓 ϭ3·₊°
 
-  <p>｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆ ──────────── ꒰ 🦢 ꒱ ──────────── ⋆｡ﾟ☾ ﾟ｡⋆｡☁︎｡ﾟ</p>
+  <p><i>✦·˚*·.* Command-line and automated Python data cleaning pipeline built with Pandas to audit, validate, and structure sales records *·.-°*·.✦</i></p>
 
   <p>
-    <img src="https://img.shields.io/badge/Python-FFB7C5?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-    <img src="https://img.shields.io/badge/Pandas-E6E6FA?style=for-the-badge&logo=pandas&logoColor=555555" alt="Pandas" />
-    <img src="https://img.shields.io/badge/Data%20Engineering-FFD1DC?style=for-the-badge&logo=databricks&logoColor=white" alt="Data Engineering" />
-    <img src="https://img.shields.io/badge/Status-Completed-E6E6FA?style=for-the-badge&logoColor=555555" alt="Status" />
+    <img src="https://img.shields.io/badge/PYTHON-3.X-FFB7C5?style=flat-square&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/PANDAS-ETL-E6E6FA?style=flat-square&logo=pandas&logoColor=555555" alt="Pandas" />
+    <img src="https://img.shields.io/badge/DATA-QUALITY-FFD1DC?style=flat-square&logo=databricks&logoColor=white" alt="Data Quality" />
+    <img src="https://img.shields.io/badge/IN_MEMORY-PIPELINE-E6E6FA?style=flat-square&logoColor=555555" alt="Pipeline" />
   </p>
 
 </div>
 
-<br/>
+˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
 
-<p align="center">୨୧ ─────── ‧₊˚ ☁️⋅♡𓂃 ࣪ ִֶָ☾. ─────── ୨୧</p>
+### ╰─► ε 📞 3 Pipeline Capabilities
 
-### <p align="center">˚₊‧꒰ა 🍓 About the Project 🍓 ໒꒱‧₊˚</p>
+The automated data cleaning script supports complete auditing and structural processing:
 
-> ✧･ﾟ: *✧･ﾟ:* *Automated Python pipeline for data auditing, cleaning, and validation of sales datasets using Pandas.* *:･ﾟ✧*:･ﾟ✧
+*   ₊˚🖊️ **Ingestion & Inspection ( Read ):** Loads raw CSV records via `pandas.read_csv()` and checks dataset dimensions (`.shape`), metadata (`.info()`), and head previews (`.head()`).
+*   ₊˚🏷️ **Data Quality Audit:** 
+    *   *Null Mapping:* Scans missing fields across columns using `.isnull().sum()`.
+    *   *Duplication Check:* Identifies and filters fully repeated rows using `.duplicated()`.
+    *   *Business Logic:* Audits negative or zero quantities and unit prices.
+*   ₊˚📋 **Cleaning & Classification ( Update ):** 
+    *   Removes duplicates via `.drop_duplicates()`.
+    *   Assigns analytical statuses (`VALIDO`, `PENDENTE`, `SUSPEITO`) using conditional mapping.
+*   ₊˚💾 **Secure Export ( Write ):** Filters clean rows and exports a structured dataset (`vendas_validas.csv`) omitting default indices (`index=False`).
 
-<div align="center">
-  <p>🌷 <b>Welcome to my data cleansing & ETL repository!</b> 🌷</p>
-  <p>This project features a robust script crafted to process raw sales records, handle structural anomalies, audit duplicate or suspicious entries, and export a clean, reliable dataset ready for analytical insights. ☁️✨</p>
-</div>
-
-<br/>
-
-<p align="center">₊˚ʚ ᗢ₊˚✧ ﾟ. ─────── ꒰ 🪄 ꒱ ─────── .ﾟ ✧˚₊ᗢ ɞ˚₊</p>
-
-### <p align="center">˚₊‧꒰ა 🛠️ ETL Pipeline Workflow ໒꒱‧₊˚</p>
-
-- **📥 1. Ingestion & Initial Inspection:**
-  - Loading the raw CSV dataset (`vendas.csv`) using `pandas.read_csv()`.
-  - Checking structural dimensions (`.shape`), schema metadata (`.info()`), and previewing records (`.head()`).
-- **🔍 2. Data Quality Audit:**
-  - Mapping missing and null values (`.isnull().sum()`).
-  - Identifying and counting completely duplicated rows (`.duplicated()`).
-  - Auditing core business rules (e.g., negative or zero quantities and unit prices).
-- **🧹 3. Cleaning & Classification:**
-  - Removing full duplicate rows using `.drop_duplicates()`.
-  - Creating an analytical **`status`** column to classify each record with precision:
-    - 🟢 **`VALIDO`**: Clean and reliable data ready for consumption.
-    - 🟡 **`PENDENTE`**: Records lacking critical product information.
-    - 🔴 **`SUSPEITO`**: Rows containing logical anomalies (e.g., quantity $\le 0$).
-- **📤 4. Secure Export:**
-  - Isolating valid records (`dados_validos`).
-  - Exporting to a new structured file (`vendas_validas.csv`) while omitting unnecessary indexes (`index=False`).
-
-<br/>
-
-<p align="center">୨୧ ─────── ‧₊˚ ☁️⋅♡𓂃 ࣪ ִֶָ☾. ─────── ୨୧</p>
+˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
 
 ### <p align="center">˚₊‧꒰ა 💻 Core Script ໒꒱‧₊˚</p>
 
