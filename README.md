@@ -4,38 +4,38 @@
 
 <div align="center">
 
-  # °₊·εʋ 📓 Python Data Cleaning Pipeline 📓 ϭ3·₊°
+  # °₊·εʋ 📓 Pipeline de Limpeza de Dados em Python 📓 ϭ3·₊°
 
-  <p><i>✦·˚*·.* Command-line and automated Python data cleaning pipeline built with Pandas to audit, validate, and structure sales records *·.-°*·.✦</i></p>
+  <p><i>✦·˚*·.* Pipeline de limpeza de dados em Python via linha de comando e automatizado construído com Pandas para auditar, validar e estruturar registros de vendas *·.-°*·.✦</i></p>
 
   <p>
     <img src="https://img.shields.io/badge/Python-FFB7C5?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
     <img src="https://img.shields.io/badge/Pandas-E6E6FA?style=for-the-badge&logo=pandas&logoColor=555555" alt="Pandas" />
-    <img src="https://img.shields.io/badge/Data%20Engineering-FFD1DC?style=for-the-badge&logo=databricks&logoColor=white" alt="Data Engineering" />
-    <img src="https://img.shields.io/badge/ETL-Pipeline-E6E6FA?style=for-the-badge&logoColor=555555" alt="ETL" />
+    <img src="https://img.shields.io/badge/Engenharia%20de%20Dados-FFD1DC?style=for-the-badge&logo=databricks&logoColor=white" alt="Engenharia de Dados" />
+    <img src="https://img.shields.io/badge/ETL-Pipeline-E6E6FA?style=for-the-badge&logo=pandas&logoColor=555555" alt="ETL" />
   </p>
 
 </div>
 
 ˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
 
-### ╰─► ε 📞 3 Pipeline Capabilities
+### ╰─► ε 📞 3 Capacidades do Pipeline
 
-The automated data cleaning script supports complete auditing and structural processing:
+O script automatizado de limpeza de dados oferece auditoria completa e processamento estrutural:
 
-*   ₊˚🖊️ **Ingestion & Inspection ( Read ):** Loads raw CSV records via `pandas.read_csv()` and checks dataset dimensions (`.shape`), metadata (`.info()`), and head previews (`.head()`).
-*   ₊˚🏷️ **Data Quality Audit:** 
-    *   *Null Mapping:* Scans missing fields across columns using `.isnull().sum()`.
-    *   *Duplication Check:* Identifies and filters fully repeated rows using `.duplicated()`.
-    *   *Business Logic:* Audits negative or zero quantities and unit prices.
-*   ₊˚📋 **Cleaning & Classification ( Update ):** 
-    *   Removes duplicates via `.drop_duplicates()`.
-    *   Assigns analytical statuses (`VALIDO`, `PENDENTE`, `SUSPEITO`) using conditional mapping.
-*   ₊˚💾 **Secure Export ( Write ):** Filters clean rows and exports a structured dataset (`vendas_validas.csv`) omitting default indices (`index=False`).
+-   ₊˚🖊️ **Ingestão e Inspeção ( Leitura ):** Carrega registros brutos em CSV via `pandas.read_csv()` e verifica dimensões do dataset (`.shape`), metadados (`.info()`) e prévia das primeiras linhas (`.head()`).
+-   ₊˚🏷️ **Auditoria de Qualidade de Dados:** 
+  -   *Mapeamento de Nulos:* Identifica campos ausentes nas colunas usando `.isnull().sum()`.
+  -   *Verificação de Duplicatas:* Localiza e filtra linhas totalmente repetidas usando `.duplicated()`.
+  -   *Regras de Negócio:* Audita quantidades e preços unitários negativos ou zerados.
+-   ₊˚📋 **Limpeza e Classificação ( Atualização ):** 
+  -   Remove duplicatas via `.drop_duplicates()`.
+  -   Atribui status analíticos (`VALIDO`, `PENDENTE`, `SUSPEITO`) usando mapeamento condicional.
+-   ₊˚💾 **Exportação Segura ( Escrita ):** Filtra as linhas válidas e exporta um dataset estruturado (`vendas_validas.csv`) omitindo os índices padrão (`index=False`).
 
 ˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
 
 <div align="center">
  ˚₊‧꒰ა 🌙 ໒꒱ ─── Ɛ 📖 ɜ ─── ꒰ა 🌙 ໒꒱‧₊
-  <p><i>made with 🩷 by <b>Maria Eduarda Gonçalves</b></i></p>
+  <p><i>feito com 🩷 por <b>Maria Eduarda Gonçalves</b></i></p>
 </div>
