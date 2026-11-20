@@ -60,15 +60,21 @@ O pipeline aplica verificações e transformações em quatro etapas sobre os re
 ### ✦ Exemplo de Uso
 
 ```text
-Total de registros: 14
+Total de registros: 9
 
 Registros pendentes de confirmação:
-...
+   id_venda produto  quantidade  preco_unitario        data
+6      1006     NaN           2            35.0  2026-10-22
+
 Vendas com quantidade suspeita:
-...
-VALIDO      ...
-PENDENTE    ...
-SUSPEITO    ...
+   id_venda produto  quantidade  preco_unitario        data
+7      1007   Mouse           0            45.0  2026-10-22
+
+status
+VALIDO      7
+PENDENTE    1
+SUSPEITO    1
+Name: count, dtype: int64
 
 Arquivo vendas_validas.csv gerado com sucesso!
 ```
