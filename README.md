@@ -2,7 +2,7 @@
 
   <p>─────────────────────── ✦ ───────────────────────</p>
 
-  <h1>˚₊‧꒰ა Pipeline de Limpeza de Dados em Python ໒꒱‧₊˚</h1>
+  <h1>꒰ა Pipeline de Limpeza de Dados em Python ໒꒱</h1>
 
   <p>
     <i>Pipeline automatizado em Python com Pandas via linha de comando para auditar, validar, classificar e exportar registros de vendas.</i>
