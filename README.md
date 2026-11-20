@@ -46,8 +46,8 @@ O pipeline aplica verificações e transformações em quatro etapas sobre os re
    ```
 2. **Clone o repositório:**
   ```bash
-   git clone [https://github.com/Madoard/python-data-cleaning-pipeline.git](https://github.com/Madoard/python-data-cleaning-pipeline.git)
-   cd python-data-cleaning-pipeline/python-data-cleaning-pipeline
+  git clone https://github.com/Madoard/python-data-cleaning-pipeline.git
+  cd python-data-cleaning-pipeline/python-data-cleaning-pipeline
    ```
 3. **Execute os scripts:**
    ```bash
