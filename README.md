@@ -77,7 +77,7 @@ Arquivo vendas_validas.csv gerado com sucesso!
 
 ### ✦ Como Foi Construído
 
-Os scripts principais estão em [analisevendas.py](python-data-cleaning-pipeline/analisevendas.py)[cite: 1, 3] e [analise.py](python-data-cleaning-pipeline/analise.py)[cite: 2, 3], operando sobre arquivos CSV como `vendas.csv`[cite: 1] e `demanda_vendas_datatech.csv`[cite: 2]. Abaixo está a estrutura principal e como cada parte funciona:
+Os scripts principais estão em [analisevendas.py](python-data-cleaning-pipeline/analisevendas.py) e [analise.py](python-data-cleaning-pipeline/analise.py), operando sobre arquivos CSV como `vendas.csv` e `demanda_vendas_datatech.csv`. Abaixo está a estrutura principal e como cada parte funciona:
 
 ```python
 dados = pd.read_csv("vendas.csv")
