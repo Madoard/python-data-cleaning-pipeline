@@ -1,12 +1,12 @@
 <div align="center">
-  ˚₊‧꒰ა 🌙 ໒꒱ ─── Ɛ 📖 ɜ ─── ꒰ა 🌙 ໒꒱‧₊
-</div>
 
-<div align="center">
+  <p>─────────────────────── ✦ ───────────────────────</p>
 
-  # °₊·εʋ 📓 Pipeline de Limpeza de Dados em Python 📓 ϭ3·₊°
+  <h1>˚₊‧꒰ა Pipeline de Limpeza de Dados em Python ໒꒱‧₊˚</h1>
 
-  <p><i>✦·˚*·.* Pipeline de limpeza de dados em Python via linha de comando e automatizado construído com Pandas para auditar, validar e estruturar registros de vendas *·.-°*·.✦</i></p>
+  <p>
+    <i>Pipeline automatizado em Python com Pandas via linha de comando para auditar, validar, classificar e exportar registros de vendas.</i>
+  </p>
 
   <p>
     <img src="https://img.shields.io/badge/Python-FFB7C5?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -17,25 +17,89 @@
 
 </div>
 
-˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
+<br/>
 
-### ╰─► ε 📞 3 Capacidades do Pipeline
+### ✦ Resumo
 
-O script automatizado de limpeza de dados oferece auditoria completa e processamento estrutural:
+Automatiza a leitura, inspeção, auditoria de qualidade, remoção de duplicatas, classificação de status e exportação de dados de vendas em CSV a partir de um script em Python com Pandas.
 
--   ₊˚🖊️ **Ingestão e Inspeção ( Leitura ):** Carrega registros brutos em CSV via `pandas.read_csv()` e verifica dimensões do dataset (`.shape`), metadados (`.info()`) e prévia das primeiras linhas (`.head()`).
--   ₊˚🏷️ **Auditoria de Qualidade de Dados:** 
-  -   *Mapeamento de Nulos:* Identifica campos ausentes nas colunas usando `.isnull().sum()`.
-  -   *Verificação de Duplicatas:* Localiza e filtra linhas totalmente repetidas usando `.duplicated()`.
-  -   *Regras de Negócio:* Audita quantidades e preços unitários negativos ou zerados.
--   ₊˚📋 **Limpeza e Classificação ( Atualização ):** 
-  -   Remove duplicatas via `.drop_duplicates()`.
-  -   Atribui status analíticos (`VALIDO`, `PENDENTE`, `SUSPEITO`) usando mapeamento condicional.
--   ₊˚💾 **Exportação Segura ( Escrita ):** Filtra as linhas válidas e exporta um dataset estruturado (`vendas_validas.csv`) omitindo os índices padrão (`index=False`).
+### ✦ Tecnologias
 
-˚₊·☁︎ ·˖ ☾ ─── ⋆.ೃ࿔* ─── ☾ ·˖ ☁︎·₊
+- **Python 3.x:** Linguagem principal para execução do pipeline via linha de comando e orquestração das etapas de processamento.
+- **Pandas:** Biblioteca utilizada para leitura e escrita de CSV (`read_csv`, `to_csv`), inspeção (`shape`, `info`, `head`), auditoria (`isnull`, `duplicated`) e limpeza (`drop_duplicates`).
+
+### ✦ Regras
+
+O pipeline aplica verificações e transformações em quatro etapas sobre os registros de vendas:
+
+- **Ingestão e inspeção:** Carrega os dados brutos de um arquivo CSV e exibe dimensões (`.shape`), estrutura/tipos (`.info()`) e primeiras linhas (`.head()`).
+- **Auditoria de qualidade:** Conta valores nulos por coluna (`.isnull().sum()`), identifica linhas duplicadas (`.duplicated()`) e verifica quantidades ou preços unitários negativos ou iguais a zero.
+- **Limpeza e classificação:** Remove linhas duplicadas (`.drop_duplicates()`) e classifica cada registro com os status `VALIDO`, `PENDENTE` ou `SUSPEITO` conforme as regras aplicadas.
+- **Exportação:** Filtra apenas os registros válidos e gera o arquivo `vendas_validas.csv` sem a coluna de índice (`index=False`).
+<p align="center">─────────────────────── · ───────────────────────</p>
+
+### ✦ Como Executar
+
+1. **Pré-requisitos:** Tenha o **Python 3.x** e a biblioteca **Pandas** instalados na máquina:
+   ```bash
+   pip install pandas
+   ```
+2. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/Madoard/python-data-cleaning-pipeline.git](https://github.com/Madoard/python-data-cleaning-pipeline.git)
+   cd python-data-cleaning-pipeline
+   ```
+3. **Execute os scripts:**
+   ```bash
+   python analisevendas.py
+   ```
+   ```bash
+   python analise.py
+   ```
+
+### ✦ Exemplo de Uso
+
+```text
+Total de registros: 14
+
+Registros pendentes de confirmação:
+...
+Vendas com quantidade suspeita:
+...
+VALIDO      ...
+PENDENTE    ...
+SUSPEITO    ...
+
+Arquivo vendas_validas.csv gerado com sucesso!
+```
+
+<p align="center">─────────────────────── · ───────────────────────</p>
+
+### ✦ Como Foi Construído
+
+Os scripts principais estão em [`analisevendas.py`](./analisevendas.py)[cite: 1] e [`analise.py`](./analise.py)[cite: 2], operando sobre arquivos CSV como `vendas.csv`[cite: 1] e `demanda_vendas_datatech.csv`[cite: 2]. Abaixo está a estrutura principal e como cada parte funciona:
+
+```python
+dados = pd.read_csv("vendas.csv")[cite: 1]
+dados_tratados = dados.copy()[cite: 1]
+
+dados_tratados = dados_tratados.drop_duplicates()[cite: 1]
+
+dados_tratados["status"] = "VALIDO"[cite: 1]
+dados_tratados.loc[dados_tratados["produto"].isnull(), "status"] = "PENDENTE"[cite: 1]
+dados_tratados.loc[dados_tratados["quantidade"] <= 0, "status"] = "SUSPEITO"[cite: 1]
+
+dados_validos = dados_tratados[dados_tratados["status"] == "VALIDO"][cite: 1]
+dados_validos.to_csv("vendas_validas.csv", index=False)[cite: 1]
+```
+
+- **Inspeção e auditoria com Pandas:** Lê os arquivos CSV com `pd.read_csv()` e avalia formato, tipos, duplicatas, valores ausentes e condições de negócio como `quantidade <= 0` e `preco_unitario <= 0`[cite: 1, 2].
+- **Tratamento e classificação (`analisevendas.py`):** Trabalha sobre `dados.copy()`, remove linhas duplicadas com `.drop_duplicates()`, rotula os registros com `status` (`VALIDO`, `PENDENTE` e `SUSPEITO`) e filtra apenas os válidos para salvar em `vendas_validas.csv` com `index=False`[cite: 1].
+- **Análise exploratória e duplicidade de chaves (`analise.py`):** Carrega `demanda_vendas_datatech.csv`, verifica duplicidades gerais e especificamente em `id_venda` (ordenando com `.sort_values("id_venda")`), remove duplicatas em uma cópia e exibe o novo formato do dataset[cite: 2].
+
+<br/>
 
 <div align="center">
- ˚₊‧꒰ა 🌙 ໒꒱ ─── Ɛ 📖 ɜ ─── ꒰ა 🌙 ໒꒱‧₊
-  <p><i>feito com 🩷 por <b>Maria Eduarda Gonçalves</b></i></p>
+  <p>°•. ✦ .•° ────── ꒰ ✦ ꒱ ────── °•. ✦ .•°</p>
+  <p><i>Feito por <b>Eduarda Gonçalves</b></i></p>
 </div>
