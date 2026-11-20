@@ -77,7 +77,7 @@ Arquivo vendas_validas.csv gerado com sucesso!
 
 ### ✦ Como Foi Construído
 
-Os scripts principais estão em [analisevendas.py](analisevendas.py) e [analise.py](analise.py), operando sobre arquivos CSV como `vendas.csv` e `demanda_vendas_datatech.csv`[cite: 1, 2]. Abaixo está a estrutura principal e como cada parte funciona:
+Os scripts principais estão em [analisevendas.py](analisevendas.py) e [analise.py](analise.py), operando sobre arquivos CSV como `vendas.csv` e `demanda_vendas_datatech.csv`. Abaixo está a estrutura principal e como cada parte funciona:
 
 ```python
 dados = pd.read_csv("vendas.csv")
@@ -93,9 +93,9 @@ dados_validos = dados_tratados[dados_tratados["status"] == "VALIDO"]
 dados_validos.to_csv("vendas_validas.csv", index=False)
 ```
 
-- **Inspeção e auditoria com Pandas:** Lê os arquivos CSV com `pd.read_csv()` e avalia formato, tipos, duplicatas, valores ausentes e condições de negócio como `quantidade <= 0` e `preco_unitario <= 0`[cite: 1, 2].
-- **Tratamento e classificação (`analisevendas.py`):** Trabalha sobre `dados.copy()`, remove linhas duplicadas com `.drop_duplicates()`, rotula os registros com `status` (`VALIDO`, `PENDENTE` e `SUSPEITO`) e filtra apenas os válidos para salvar em `vendas_validas.csv` com `index=False`[cite: 1].
-- **Análise exploratória e duplicidade de chaves (`analise.py`):** Carrega `demanda_vendas_datatech.csv`, verifica duplicidades gerais e especificamente em `id_venda` (ordenando com `.sort_values("id_venda")`), remove duplicatas em uma cópia e exibe o novo formato do dataset[cite: 2].
+- **Inspeção e auditoria com Pandas:** Lê os arquivos CSV com `pd.read_csv()` e avalia formato, tipos, duplicatas, valores ausentes e condições de negócio como `quantidade <= 0` e `preco_unitario <= 0`.
+- **Tratamento e classificação (`analisevendas.py`):** Trabalha sobre `dados.copy()`, remove linhas duplicadas com `.drop_duplicates()`, rotula os registros com `status` (`VALIDO`, `PENDENTE` e `SUSPEITO`) e filtra apenas os válidos para salvar em `vendas_validas.csv` com `index=False`.
+- **Análise exploratória e duplicidade de chaves (`analise.py`):** Carrega `demanda_vendas_datatech.csv`, verifica duplicidades gerais e especificamente em `id_venda` (ordenando com `.sort_values("id_venda")`), remove duplicatas em uma cópia e exibe o novo formato do dataset.
 
 <br/>
 
